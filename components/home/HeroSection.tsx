@@ -40,7 +40,7 @@ const HeroSection = () => {
             id="hero"
             aria-labelledby="hero-title"
             // Cao bằng 1 màn hình nhưng tối đa 960px để không bị loãng trên màn hình lớn/dọc
-            className="relative flex min-h-[min(calc(100svh-var(--header-h)),960px)] items-center overflow-hidden bg-linear-to-b from-blush-soft via-blush-soft to-blush pt-6 pb-28 md:pb-80"
+            className="relative flex min-h-[min(calc(100svh-var(--header-h)),960px)] items-center overflow-hidden bg-linear-to-b from-blush-soft via-blush-soft to-blush pt-6 pb-28 md:pb-36"
         >
             {/* Quầng sáng mềm phía sau */}
             <div className="pointer-events-none absolute -top-32 -left-24 h-[420px] w-[420px] rounded-full bg-ivory/70 blur-3xl" aria-hidden="true" />

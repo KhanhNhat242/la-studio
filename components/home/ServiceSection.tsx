@@ -25,13 +25,13 @@ const ServiceSection = () => {
             <section id='pricing' aria-labelledby="pricing-title" className="relative pt-[100px] md:pt-[120px]">
                 <div className="pointer-events-none absolute top-1/2 left-1/2 h-[520px] w-[min(900px,100%)] -translate-x-1/2 -translate-y-1/3 rounded-full bg-blush-soft/80 blur-3xl" aria-hidden="true" />
 
-                <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-10">
+                <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
                     <SectionHeading id="pricing-title" eyebrow="Gói chụp dành cho nàng" title="Bảng giá & Đặt lịch" />
 
-                    <div className="grid items-start gap-12 lg:grid-cols-12 lg:gap-10">
-                        {/* Bên trái: 3 thẻ bảng giá */}
-                        <div className="lg:col-span-7">
-                            <ul className="grid gap-8 md:grid-cols-3 md:gap-5 md:pt-4">
+                    <div className="grid items-start gap-12 xl:grid-cols-[1.75fr_1fr] xl:gap-10">
+                        {/* Bên trái: 3 thẻ bảng giá – bám dưới header khi cuộn qua form (desktop) */}
+                        <div className="xl:sticky xl:top-[calc(var(--header-h)+2rem)]">
+                            <ul className="grid gap-8 md:grid-cols-3 md:gap-5 md:pt-4 xl:gap-6">
                                 {packages.map((pkg, i) => (
                                     <li
                                         key={pkg.slug}
@@ -92,7 +92,7 @@ const ServiceSection = () => {
                         {/* Bên phải: form đặt lịch (F8) */}
                         <div
                             id="booking"
-                            className="scroll-mt-(--header-h) lg:col-span-5"
+                            className="mx-auto w-full max-w-2xl scroll-mt-(--header-h) xl:max-w-none"
                             data-reveal="right"
                             style={{ '--reveal-delay': '300ms' } as CSSProperties}
                         >
