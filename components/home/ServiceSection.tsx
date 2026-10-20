@@ -1,3 +1,5 @@
+'use client'
+
 import React, { CSSProperties } from 'react'
 import { featuredConcepts } from '@/lib/data/concepts'
 import { FlowerBranch } from '@/components/decor/LineArt'
@@ -84,7 +86,7 @@ const ServiceSection = () => {
                                 ))}
                             </ul>
 
-                            <p className="mt-10 text-center text-sm text-ink-soft italic" data-reveal="up">
+                            <p className="mt-10 text-center text-sm text-ink-soft italic text-balance" data-reveal="up">
                                 Giá tham khảo – liên hệ La để được tư vấn chính xác
                             </p>
                         </div>

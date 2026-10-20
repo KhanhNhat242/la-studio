@@ -68,7 +68,7 @@ const PricingSection = () => {
                     ))}
                 </ul>
 
-                <p className="mt-12 text-center text-sm text-ink-soft italic" data-reveal="up">
+                <p className="mt-12 text-center text-sm text-ink-soft italic text-balance" data-reveal="up">
                     Giá tham khảo – liên hệ La để được tư vấn chính xác
                 </p>
             </div>
