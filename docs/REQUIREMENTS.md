@@ -146,6 +146,11 @@ https://www.google.com/maps/place/La+STUDIO+-+TI%E1%BB%86M+%E1%BA%A2NH+NH%C3%80+
 - Nội dung sẵn có (giới thiệu, bảng giá, giờ mở cửa…) [PHIẾU]: sale chỉ dán lại **link Google Maps** → chưa có văn bản giới thiệu, bảng giá, giờ mở cửa cụ thể.
   - Giờ mở cửa, đánh giá, ảnh: lấy từ trang Google Maps / Facebook nếu truy cập được; nếu không, dùng placeholder.
   - **Bảng giá, tên gói, số ảnh, thời lượng:** [CHƯA CÓ] → dùng **dữ liệu mẫu** và hiển thị dòng chú thích kiểu "Giá tham khảo – liên hệ để được báo giá chính xác". Toàn bộ dữ liệu mẫu tập trung trong `lib/data/` để thay một chỗ.
+  - **Thông điệp giới thiệu** (người dùng cung cấp 20/10/2026), dùng cho section "Về chúng mình":
+    - Tổ hợp hơn 101 concept nàng thơ tại Nhà La.
+    - Một tiệm ảnh – thật nhiều phiên bản xinh đẹp của bạn.
+    - NÉT ĐẸP CÒN MÃI: Vẻ đẹp đích thực không phai nhạt theo thời gian, mà ngày càng tỏa sáng trong ký ức.
+    - La Studio – Nơi lưu giữ những khoảnh khắc đẹp nhất của bạn.
 - Mọi nội dung chữ hiển thị viết bằng tiếng Việt có dấu, đúng chính tả.
 
 ---
@@ -169,7 +174,7 @@ https://www.google.com/maps/place/La+STUDIO+-+TI%E1%BB%86M+%E1%BA%A2NH+NH%C3%80+
 ### 6.1. Menu điều hướng (chốt theo mẫu thiết kế trang chủ)
 Logo chữ "La studio / chụp ảnh nàng thơ" · **Trang chủ · Về chúng mình · Concept · Bảng giá · Album · Liên hệ** · nút **Đặt lịch chụp** (nền hồng). Header sticky.
 - Hiện tại menu là anchor tới các section của trang chủ: `/#trang-chu`, `/#ve-chung-minh`, `/#concept`, `/#bang-gia`, `/#album`, `/#lien-he` (footer). Khi làm các trang riêng (F2, F3, F5, F6, F9) thì đổi `navItems` trong `lib/data/site.ts`.
-- Các trang chưa làm (F4 chi tiết concept, F8 đặt lịch) **tạm trỏ về Zalo** qua `links` trong `lib/data/site.ts` – không để link 404 trong bản demo.
+- F8 đặt lịch: form đặt ngay trên trang chủ (`/#booking`, cạnh bảng giá); nút "Đặt lịch chụp" ở header/footer cuộn tới form. Trang F4 (chi tiết concept) chưa làm **tạm trỏ về Zalo** qua `links` trong `lib/data/site.ts` – không để link 404 trong bản demo.
 - Không tạo route ngoài danh sách mục 6 nếu chưa cập nhật tài liệu.
 
 ### 6.1.1. Bố cục trang chủ (F1) – theo mẫu thiết kế
@@ -178,8 +183,9 @@ Logo chữ "La studio / chụp ảnh nàng thơ" · **Trang chủ · Về chúng
 | 1 | Hero "Chạm vào giấc mơ" | `trang-chu` | Cao đúng 1 màn hình; tiêu đề "Chạm vào giấc mơ NÀNG THƠ của bạn"; mô tả; CTA "Khám phá Concept" + "Nhận tư vấn" (viền mảnh); 3 ảnh khung vòm xếp lớp; sticker "100% tự nhiên & mộng mơ"; cành hoa line art; cánh hoa rơi; sóng chuyển nền xuống kem |
 | 2 | Về chúng mình | `ve-chung-minh` | Polaroid nàng áo len + băng keo giấy + chữ viết tay; tiêu đề "Tiệm ảnh của những kẻ mộng mơ"; 3 cam kết có icon vẽ tay; nét cong mảnh dẫn sang section sau |
 | 3 | Các Concept nổi bật | `concept` | 3 thẻ ảnh dọc 3:4 bo góc: tên + 1 câu mô tả + nút "Xem chi tiết" |
-| 4 | Bảng giá yêu thương | `bang-gia` | 3 thẻ: Gói Thơ Ngây · Gói Nàng Thơ (nhãn "Bán chạy") · Gói Signature; chú thích "Giá tham khảo – liên hệ La để được tư vấn chính xác" |
+| 4 | Bảng giá & Đặt lịch | `pricing` (form: `booking`) | Trái: 3 thẻ Gói Thơ Ngây · Gói Nàng Thơ (nhãn "Bán chạy") · Gói Signature, nút "Đặt lịch ngay" điền sẵn gói vào form; chú thích "Giá tham khảo – liên hệ La để được tư vấn chính xác". Phải: form đặt lịch F8 |
 | 5 | Khoảnh khắc La Studio | `album` | 5 polaroid nghiêng, băng keo/ghim, chú thích viết tay; nút xem thêm trên Facebook |
+| 5b | Bộ sưu tập "Album ảnh nàng thơ" | `collection` | Lưới masonry 25 ảnh (giữ tỉ lệ gốc, không cắt chiều cao), hiện 15 ảnh + ô "Xem thêm +10"; bấm ảnh/ô mở lightbox có nút trước/sau, Esc, phím mũi tên, vuốt (dùng lại cho F6) |
 | 6 | Footer | `lien-he` | Sóng màu be; bản đồ Google Maps bo góc; SĐT, địa chỉ, Zalo/Facebook/Messenger; nút đặt lịch |
 
 - Khoảng cách: Hero → About ~120–140px (gồm phần sóng); giữa các section còn lại 100px (mobile) / 120px (desktop).
@@ -260,3 +266,7 @@ Mọi thay đổi phạm vi (thêm/bớt chức năng, đổi màu, đổi route
 |---|---|---|---|
 | 20/10/2026 | Dev | Tạo tài liệu từ Phiếu DEV 22 | `la-studio.pdf` |
 | 20/10/2026 | Dev | Làm trang chủ F1 + nút liên hệ nổi F10 theo mẫu thiết kế; chốt menu 6.1, bố cục 6.1.1, font 4.3. Giá/concept là dữ liệu mẫu (PLACEHOLDER). Nút đặt lịch & "Xem chi tiết" tạm trỏ Zalo | Mẫu thiết kế + mô tả section của người dùng |
+| 20/10/2026 | Dev | Thêm thông điệp giới thiệu (mục 5), cập nhật đoạn văn section "Về chúng mình" trang chủ | Người dùng cung cấp |
+| 20/10/2026 | Dev | Trang chủ gộp Concept + Bảng giá thành section "Dịch vụ" (`#service`, `ServiceSection`); concept nổi bật chuyển sang carousel coverflow; thêm concept "Couple Mùa Thu" (thuộc dịch vụ "Chụp ảnh theo chủ đề và phong cách riêng", ảnh ở `public/images/concepts/couple-mua-thu/`, tên/mô tả là PLACEHOLDER) | Người dùng cung cấp ảnh |
+| 20/10/2026 | Dev | Thêm form đặt lịch (F8, bản rút gọn trên trang chủ) cạnh bảng giá: họ tên, SĐT/Zalo, concept (chọn bằng danh sách, có lựa chọn "Nhờ La tư vấn giúp"), gói, ngày, khung giờ, số người, ghi chú; validate client + Server Action; lưu file `data/bookings.json` trạng thái "Mới" (`lib/bookings/`). Khung giờ là PLACEHOLDER. `links.booking` đổi từ Zalo sang `/#booking` | Mẫu code người dùng cung cấp |
+| 20/10/2026 | Dev | Thêm section "Bộ sưu tập" trên trang chủ (mục 6.1.1 dòng 5b): 25 ảnh chọn ngẫu nhiên từ `public/images/library` (bỏ ảnh < 800px), chép sang `public/images/gallery/collection/`; component `components/gallery/Lightbox.tsx` + `PhotoCollection.tsx` | Yêu cầu người dùng + ảnh tham khảo layout |

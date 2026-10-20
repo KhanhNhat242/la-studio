@@ -1,9 +1,9 @@
 import React from 'react'
 import HeroSection from '@/components/home/HeroSection'
 import AboutSection from '@/components/home/AboutSection'
-import ConceptsSection from '@/components/home/ConceptsSection'
-import PricingSection from '@/components/home/PricingSection'
+import ServiceSection from '@/components/home/ServiceSection'
 import GallerySection from '@/components/home/GallerySection'
+import CollectionSection from '@/components/home/CollectionSection'
 import { site } from '@/lib/data/site'
 
 // Dữ liệu có cấu trúc cho Google (docs/REQUIREMENTS.md mục 7.2)
@@ -29,9 +29,9 @@ const Home = () => {
             />
             <HeroSection />
             <AboutSection />
-            <ConceptsSection />
-            <PricingSection />
-            <GallerySection />
+            <ServiceSection />
+            {/* <GallerySection /> */}
+            <CollectionSection />
         </>
     )
 }

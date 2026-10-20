@@ -10,7 +10,7 @@ const commitments = [
 
 const AboutSection = () => {
     return (
-        <section id="ve-chung-minh" aria-labelledby="about-title" className="relative pt-8 md:pt-10">
+        <section id="about-us" aria-labelledby="about-title" className="relative pt-8 md:pt-10">
             <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-4 sm:px-6 md:grid-cols-[0.85fr_1.15fr] md:gap-12 lg:gap-20 lg:px-10">
                 {/* Ảnh Polaroid */}
                 <div className="relative mx-auto w-full max-w-[340px]" data-reveal="left">
@@ -54,25 +54,18 @@ const AboutSection = () => {
                         data-reveal="up"
                         style={{ '--reveal-delay': '200ms' } as CSSProperties}
                     >
-                        Hành trình tôn vinh vẻ đẹp tự nhiên của “Nàng”. Chúng mình tin rằng, mỗi cô gái đều mang một vẻ đẹp thơ
-                        mộng rất riêng. La studio ra đời để cùng bạn lưu giữ những khoảnh khắc trong trẻo, tự nhiên nhất.
+                        Một tiệm ảnh – thật nhiều phiên bản xinh đẹp của bạn. Tại Nhà La là tổ hợp hơn 101 concept nàng thơ,
+                        để mỗi lần ghé chơi là một lần bạn được làm “Nàng” theo cách rất riêng.
                     </p>
-
-                    <ul className="mx-auto mt-10 grid max-w-md grid-cols-3 gap-4 md:mx-0">
-                        {commitments.map(({ label, Icon }, i) => (
-                            <li
-                                key={label}
-                                className="flex flex-col items-center gap-3 text-center"
-                                data-reveal="up"
-                                style={{ '--reveal-delay': `${300 + i * 120}ms` } as CSSProperties}
-                            >
-                                <span className="flex h-16 w-16 items-center justify-center rounded-full border border-beige bg-ivory text-rose-deep shadow-sm">
-                                    <Icon className="h-9 w-9" />
-                                </span>
-                                <span className="text-sm leading-snug text-ink">{label}</span>
-                            </li>
-                        ))}
-                    </ul>
+                    <p
+                        className="mx-auto mt-4 max-w-xl text-[17px] leading-relaxed text-ink-soft md:mx-0"
+                        data-reveal="up"
+                        style={{ '--reveal-delay': '250ms' } as CSSProperties}
+                    >
+                        <strong className="font-serif font-normal text-rose-deep">Nét đẹp còn mãi</strong> – vẻ đẹp đích thực
+                        không phai nhạt theo thời gian, mà ngày càng toả sáng trong ký ức. La studio – nơi lưu giữ những khoảnh
+                        khắc đẹp nhất của bạn.
+                    </p>
                 </div>
             </div>
 

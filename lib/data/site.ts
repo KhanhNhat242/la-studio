@@ -6,9 +6,9 @@ const LAT = 10.7644669
 const LNG = 106.6656651
 
 export const site = {
-    name: 'La studio',
-    tagline: 'chụp ảnh nàng thơ',
-    fullName: 'La studio – chụp ảnh nàng thơ',
+    name: 'La Studio',
+    tagline: 'Chụp ảnh nàng thơ',
+    fullName: 'La Studio – Chụp ảnh nàng thơ',
     mapsName: 'La STUDIO – TIỆM ẢNH NHÀ LA',
     description:
         'La studio – tiệm ảnh nàng thơ tại TP. Hồ Chí Minh. Chụp ảnh concept cá nhân, nghệ thuật, cổ trang, chân dung và theo phong cách riêng.',
@@ -27,10 +27,10 @@ export const site = {
     copyrightYear: 2026,
 } as const
 
-// Các trang F4 (chi tiết concept) và F8 (đặt lịch) chưa làm → tạm trỏ về Zalo tư vấn.
+// Trang F4 (chi tiết concept) chưa làm → tạm trỏ về Zalo tư vấn. Đặt lịch (F8) dùng form ở trang chủ.
 // Khi làm xong chỉ cần đổi ở đây.
 export const links = {
-    booking: site.zalo,
+    booking: '/#booking',
     consult: site.zalo,
     conceptDetail: (slug: string) => {
         void slug
@@ -48,10 +48,9 @@ export interface NavItem {
 
 // Menu trang chủ (docs/REQUIREMENTS.md mục 6.1)
 export const navItems: NavItem[] = [
-    { label: 'Trang chủ', href: '/#trang-chu', sectionId: 'trang-chu' },
-    { label: 'Về chúng mình', href: '/#ve-chung-minh', sectionId: 've-chung-minh' },
-    { label: 'Concept', href: '/#concept', sectionId: 'concept' },
-    { label: 'Bảng giá', href: '/#bang-gia', sectionId: 'bang-gia' },
+    { label: 'Trang chủ', href: '/#hero', sectionId: 'hero' },
+    { label: 'Về chúng mình', href: '/#about-us', sectionId: 'about-us' },
+    { label: 'Dịch vụ', href: '/#service', sectionId: 'service' },
     { label: 'Album', href: '/#album', sectionId: 'album' },
-    { label: 'Liên hệ', href: '/#lien-he', sectionId: 'lien-he' },
+    { label: 'Liên hệ', href: '/#contact-us', sectionId: 'contact-us' },
 ]

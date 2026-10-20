@@ -37,7 +37,7 @@ const ArchPhoto = ({ src, alt, sizes, className, delay, isMain }: ArchPhotoProps
 const HeroSection = () => {
     return (
         <section
-            id="trang-chu"
+            id="hero"
             aria-labelledby="hero-title"
             className="relative flex min-h-[calc(100svh-var(--header-h))] items-center overflow-hidden bg-linear-to-b from-blush-soft via-blush-soft to-blush pt-6 pb-28 md:pb-32"
         >
@@ -93,26 +93,6 @@ const HeroSection = () => {
                     >
                         Nơi lưu giữ những khoảnh khắc trong ngần, tự nhiên và thơ mộng nhất của thanh xuân.
                     </p>
-
-                    <div
-                        className="hero-in mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 lg:justify-start"
-                        style={{ '--hero-delay': '680ms' } as CSSProperties}
-                    >
-                        <Link
-                            href="/#concept"
-                            className="rounded-full bg-rose px-7 py-3 text-[15px] text-ivory shadow-lg shadow-rose/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-rose-deep"
-                        >
-                            Khám phá Concept
-                        </Link>
-                        <a
-                            href={links.consult}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="rounded-full border border-ink/60 px-7 py-3 text-[15px] text-ink transition-all duration-300 hover:-translate-y-0.5 hover:border-rose-deep hover:bg-ivory/60 hover:text-rose-deep"
-                        >
-                            Nhận tư vấn
-                        </a>
-                    </div>
                 </div>
 
                 {/* Cụm ảnh khung vòm xếp lớp */}

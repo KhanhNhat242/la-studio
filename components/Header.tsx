@@ -47,7 +47,7 @@ const Header = () => {
         >
             <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-10">
                 {/* Logo chữ */}
-                <Link href="/#trang-chu" onClick={closeMenu} className="group flex flex-col items-center leading-none">
+                <Link href="/#hero" onClick={closeMenu} className="group flex flex-col items-center leading-none">
                     <span className="font-serif text-[28px] tracking-tight text-ink sm:text-[30px]">{site.name}</span>
                     <span className="mt-1 text-[11px] tracking-[0.08em] text-ink-soft transition-colors group-hover:text-rose-deep">
                         {site.tagline}
@@ -83,8 +83,6 @@ const Header = () => {
                 <div className="flex items-center gap-2">
                     <a
                         href={links.booking}
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="rounded-full bg-rose px-4 py-2 text-sm text-ivory shadow-sm shadow-rose/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-rose-deep sm:px-6 sm:py-2.5 sm:text-[15px]"
                     >
                         Đặt lịch chụp

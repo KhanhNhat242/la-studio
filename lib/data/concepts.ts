@@ -48,4 +48,13 @@ export const featuredConcepts: Concept[] = [
         imageAlt: 'Cô gái áo len kem ngồi tựa nhẹ, nụ cười trong trẻo',
         isPlaceholder: true,
     },
+    {
+        slug: 'couple-mua-thu',
+        name: 'Couple Mùa Thu',
+        description: 'Ngọt ngào, ấm áp bên nhau giữa thảm lá vàng.',
+        service: 'Chụp ảnh theo chủ đề và phong cách riêng',
+        image: '/images/concepts/couple-mua-thu/couple-la-phong.jpg',
+        imageAlt: 'Cặp đôi áo len trắng cầm lá phong, cô gái đeo bịt tai lông trắng chu môi đáng yêu',
+        isPlaceholder: true,
+    },
 ]

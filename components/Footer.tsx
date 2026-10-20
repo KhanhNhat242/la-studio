@@ -11,7 +11,7 @@ const socials = [
 
 const Footer = () => {
     return (
-        <footer id="lien-he" aria-labelledby="footer-title" className="relative mt-[100px] md:mt-[120px]">
+        <footer id="contact-us" aria-labelledby="footer-title" className="relative mt-[100px] md:mt-[120px]">
             <Wave className="absolute -top-[59px] left-0 h-[60px] w-full text-beige md:-top-[89px] md:h-[90px]" />
 
             <div className="bg-beige">
@@ -72,8 +72,6 @@ const Footer = () => {
                             ))}
                             <a
                                 href={links.booking}
-                                target="_blank"
-                                rel="noopener noreferrer"
                                 className="ml-2 rounded-full bg-rose px-5 py-2.5 text-sm text-ivory shadow-md shadow-rose/30 transition-all duration-300 hover:-translate-y-0.5 hover:bg-rose-deep"
                             >
                                 Đặt lịch chụp
