@@ -180,7 +180,7 @@ Logo chữ "La studio / chụp ảnh nàng thơ" · **Trang chủ · Về chúng
 ### 6.1.1. Bố cục trang chủ (F1) – theo mẫu thiết kế
 | Thứ tự | Section | id | Nội dung chính |
 |---|---|---|---|
-| 1 | Hero "Chạm vào giấc mơ" | `trang-chu` | Cao đúng 1 màn hình; tiêu đề "Chạm vào giấc mơ NÀNG THƠ của bạn"; mô tả; CTA "Khám phá Concept" + "Nhận tư vấn" (viền mảnh); 3 ảnh khung vòm xếp lớp; sticker "100% tự nhiên & mộng mơ"; cành hoa line art; cánh hoa rơi; sóng chuyển nền xuống kem |
+| 1 | Hero "Chạm vào giấc mơ" | `trang-chu` | Cao 1 màn hình, tối đa 960px trên màn hình lớn/dọc; tiêu đề "Chạm vào giấc mơ NÀNG THƠ của bạn"; mô tả; CTA "Khám phá Concept" + "Nhận tư vấn" (viền mảnh); 3 ảnh khung vòm xếp lớp; sticker "100% tự nhiên & mộng mơ"; cành hoa line art; cánh hoa rơi; sóng chuyển nền xuống kem |
 | 2 | Về chúng mình | `ve-chung-minh` | Polaroid nàng áo len + băng keo giấy + chữ viết tay; tiêu đề "Tiệm ảnh của những kẻ mộng mơ"; 3 cam kết có icon vẽ tay; nét cong mảnh dẫn sang section sau |
 | 3 | Các Concept nổi bật | `concept` | 3 thẻ ảnh dọc 3:4 bo góc: tên + 1 câu mô tả + nút "Xem chi tiết" |
 | 4 | Bảng giá & Đặt lịch | `pricing` (form: `booking`) | Trái: 3 thẻ Gói Thơ Ngây · Gói Nàng Thơ (nhãn "Bán chạy") · Gói Signature, nút "Đặt lịch ngay" điền sẵn gói vào form; chú thích "Giá tham khảo – liên hệ La để được tư vấn chính xác". Phải: form đặt lịch F8 |
@@ -270,3 +270,4 @@ Mọi thay đổi phạm vi (thêm/bớt chức năng, đổi màu, đổi route
 | 20/10/2026 | Dev | Trang chủ gộp Concept + Bảng giá thành section "Dịch vụ" (`#service`, `ServiceSection`); concept nổi bật chuyển sang carousel coverflow; thêm concept "Couple Mùa Thu" (thuộc dịch vụ "Chụp ảnh theo chủ đề và phong cách riêng", ảnh ở `public/images/concepts/couple-mua-thu/`, tên/mô tả là PLACEHOLDER) | Người dùng cung cấp ảnh |
 | 20/10/2026 | Dev | Thêm form đặt lịch (F8, bản rút gọn trên trang chủ) cạnh bảng giá: họ tên, SĐT/Zalo, concept (chọn bằng danh sách, có lựa chọn "Nhờ La tư vấn giúp"), gói, ngày, khung giờ, số người, ghi chú; validate client + Server Action; lưu file `data/bookings.json` trạng thái "Mới" (`lib/bookings/`). Khung giờ là PLACEHOLDER. `links.booking` đổi từ Zalo sang `/#booking` | Mẫu code người dùng cung cấp |
 | 20/10/2026 | Dev | Thêm section "Bộ sưu tập" trên trang chủ (mục 6.1.1 dòng 5b): 25 ảnh chọn ngẫu nhiên từ `public/images/library` (bỏ ảnh < 800px), chép sang `public/images/gallery/collection/`; component `components/gallery/Lightbox.tsx` + `PhotoCollection.tsx` | Yêu cầu người dùng + ảnh tham khảo layout |
+| 20/10/2026 | Dev | Hero: giới hạn chiều cao tối thiểu `min(100svh - header, 960px)` để không bị loãng trên màn hình lớn | Yêu cầu người dùng |

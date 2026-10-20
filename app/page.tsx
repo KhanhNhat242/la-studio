@@ -2,7 +2,6 @@ import React from 'react'
 import HeroSection from '@/components/home/HeroSection'
 import AboutSection from '@/components/home/AboutSection'
 import ServiceSection from '@/components/home/ServiceSection'
-import GallerySection from '@/components/home/GallerySection'
 import CollectionSection from '@/components/home/CollectionSection'
 import { site } from '@/lib/data/site'
 
@@ -30,7 +29,6 @@ const Home = () => {
             <HeroSection />
             <AboutSection />
             <ServiceSection />
-            {/* <GallerySection /> */}
             <CollectionSection />
         </>
     )

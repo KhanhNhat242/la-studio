@@ -39,7 +39,8 @@ const HeroSection = () => {
         <section
             id="hero"
             aria-labelledby="hero-title"
-            className="relative flex min-h-[calc(100svh-var(--header-h))] items-center overflow-hidden bg-linear-to-b from-blush-soft via-blush-soft to-blush pt-6 pb-28 md:pb-32"
+            // Cao bằng 1 màn hình nhưng tối đa 960px để không bị loãng trên màn hình lớn/dọc
+            className="relative flex min-h-[min(calc(100svh-var(--header-h)),960px)] items-center overflow-hidden bg-linear-to-b from-blush-soft via-blush-soft to-blush pt-6 pb-28 md:pb-80"
         >
             {/* Quầng sáng mềm phía sau */}
             <div className="pointer-events-none absolute -top-32 -left-24 h-[420px] w-[420px] rounded-full bg-ivory/70 blur-3xl" aria-hidden="true" />

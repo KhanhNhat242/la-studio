@@ -9,6 +9,8 @@ interface PhotoCollectionProps {
     photos: Photo[]
     // Số ảnh hiện trên lưới, phần còn lại xem qua nút "Xem thêm"
     visibleCount: number
+    // Số ảnh hiện trên mobile (< 640px), các ảnh sau đó bị ẩn bằng CSS
+    mobileVisibleCount?: number
 }
 
 const ZoomIcon = () => (
@@ -19,10 +21,15 @@ const ZoomIcon = () => (
 )
 
 // Lưới ảnh dạng masonry: mỗi ảnh giữ nguyên tỉ lệ gốc, không cắt chiều cao
-const PhotoCollection = ({ photos, visibleCount }: PhotoCollectionProps) => {
+const PhotoCollection = ({ photos, visibleCount, mobileVisibleCount = visibleCount }: PhotoCollectionProps) => {
     const [openIndex, setOpenIndex] = useState<number | null>(null)
     const visible = photos.slice(0, visibleCount)
+    const mobileCount = Math.min(mobileVisibleCount, visible.length)
     const remaining = photos.length - visible.length
+    const mobileRemaining = photos.length - mobileCount
+
+    // Nút "Xem thêm" mở ảnh đầu tiên chưa hiện trên lưới, tuỳ kích thước màn hình
+    const openMore = () => setOpenIndex(window.matchMedia('(min-width: 640px)').matches ? visible.length : mobileCount)
 
     return (
         <>
@@ -30,7 +37,7 @@ const PhotoCollection = ({ photos, visibleCount }: PhotoCollectionProps) => {
                 {visible.map((photo, i) => (
                     <li
                         key={photo.image}
-                        className="mb-4 break-inside-avoid sm:mb-5"
+                        className={`mb-4 break-inside-avoid sm:mb-5 ${i >= mobileCount ? 'max-sm:hidden' : ''}`}
                         data-reveal="up"
                         style={{ '--reveal-delay': `${(i % 4) * 90}ms` } as CSSProperties}
                     >
@@ -61,14 +68,17 @@ const PhotoCollection = ({ photos, visibleCount }: PhotoCollectionProps) => {
                     </li>
                 ))}
 
-                {remaining > 0 && (
-                    <li className="mb-4 break-inside-avoid sm:mb-5" data-reveal="up">
+                {mobileRemaining > 0 && (
+                    <li className={`mb-4 break-inside-avoid sm:mb-5 ${remaining > 0 ? '' : 'sm:hidden'}`} data-reveal="up">
                         <button
                             type="button"
-                            onClick={() => setOpenIndex(visible.length)}
+                            onClick={openMore}
                             className="group flex aspect-[3/4] w-full cursor-pointer flex-col items-center justify-center gap-3 rounded-2xl border border-dashed border-rose/50 bg-blush-soft text-rose-deep transition-colors duration-500 hover:bg-blush"
                         >
-                            <span className="font-serif text-4xl sm:text-5xl">+{remaining}</span>
+                            <span className="font-serif text-4xl sm:text-5xl">
+                                <span className="sm:hidden">+{mobileRemaining}</span>
+                                <span className="max-sm:hidden">+{remaining}</span>
+                            </span>
                             <span className="text-sm tracking-wide">Xem thêm ảnh</span>
                             <span
                                 className="mt-1 flex h-10 w-10 items-center justify-center rounded-full bg-ivory/80 transition-transform duration-500 group-hover:translate-x-1 motion-reduce:transition-none"

@@ -106,7 +106,6 @@ const Lightbox = ({ photos, index, onClose, onChange }: LightboxProps) => {
                     sizes="(min-width: 1024px) 70vw, 100vw"
                     className="h-auto max-h-[80vh] w-auto max-w-full rounded-lg object-contain shadow-2xl"
                 />
-                <figcaption className="mt-4 max-w-xl text-center text-sm text-ivory/80">{photo.alt}</figcaption>
             </figure>
         </div>,
         document.body
